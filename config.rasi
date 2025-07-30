@@ -1,0 +1,68 @@
+/**
+ * Author : Aditya Shakya (adi1090x)
+ * Fixed + Centered by Musa 🧠
+ * Rofi Config - No syntax errors, centered, qute.
+ */
+
+configuration {
+  modi: "drun,run,filebrowser,window";
+  font: "JetBrainsMono Nerd Font 12";
+  show-icons: true;
+  icon-theme: "Papirus";
+
+  location: 0;
+  anchor: center;
+  fullscreen: false;
+  fixed-num-lines: true;
+
+  normalize-match: true;
+  case-sensitive: false;
+  cycle: true;
+  steal-focus: false;
+  click-to-exit: true;
+  threads: 0;
+
+  display-drun: "Apps";
+  display-run: "Run";
+  display-window: "Windows";
+  display-filebrowser: "Files";
+
+  run-command: "{cmd}";
+  run-shell-command: "{terminal} -e {cmd}";
+  terminal: "rofi-sensible-terminal";
+
+  run, drun {
+    fallback-icon: "application-x-addon";
+  }
+
+  drun {
+    parse-user: true;
+    parse-system: true;
+    display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    show-actions: false;
+    url-launcher: "xdg-open";
+    use-desktop-cache: false;
+    reload-desktop-cache: false;
+    match-fields: "name,generic,exec,categories,keywords";
+  }
+
+  filebrowser {
+    directories-first: true;
+    sorting-method: "name";
+  }
+
+  window {
+    width: 40%;
+    location: center;
+    anchor: center;
+  }
+
+  window-format: "{w} - {c} - {t:0}";
+  window-command: "wmctrl -i -R {window}";
+  window-thumbnail: false;
+  window-match-fields: "title,class,role,name,desktop";
+}
+
+// === Themes ===
+// position fix:- rofi -show drun -theme-str 'window { anchor: center; location: center; }'
+@theme "/home/musa-de-codes/.local/share/rofi/themes/simple-tokyonight.rasi"
