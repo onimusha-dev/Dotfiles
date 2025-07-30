@@ -63,4 +63,5 @@ configuration {
 
 // === Themes ===
 // position fix:- rofi -show drun -theme-str 'window { anchor: center; location: center; }'
-@theme "/home/musa-de-codes/.local/share/rofi/themes/simple-tokyonight.rasi"
+// @theme "/home/musa-de-codes/.local/share/rofi/themes/simple-tokyonight.rasi"
+@theme "/home/musa-de-codes/.config/rofi/theme.rasi"
